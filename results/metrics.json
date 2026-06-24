@@ -1,0 +1,262 @@
+{
+  "project_title": "Evaluating and Enhancing Adversarial Robustness of ML Models for NIDS",
+  "random_seed": 42,
+  "dataset_profile": {
+    "rows": 170366,
+    "columns": 79,
+    "feature_count": 78,
+    "missing_values": 20,
+    "duplicate_rows": 6066,
+    "label_distribution": {
+      "BENIGN": 168186,
+      "Web Attack \ufffd Brute Force": 1507,
+      "Web Attack \ufffd XSS": 652,
+      "Web Attack \ufffd Sql Injection": 21
+    },
+    "attack_types": [
+      "Web Attack \ufffd Brute Force",
+      "Web Attack \ufffd XSS",
+      "Web Attack \ufffd Sql Injection"
+    ],
+    "classification_task": "binary (Benign vs Attack)"
+  },
+  "dataset_file": "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+  "splits": "72% train / 8% val / 20% test (stratified)",
+  "samples_after_balancing": 4680,
+  "attack_samples_evaluated": 200,
+  "epsilons": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "primary_epsilon": 0.05,
+  "pgd_steps": 20,
+  "pgd_step_size": 0.01,
+  "attack_objective": "untargeted evasion (attack classified as benign)",
+  "white_box_model": "MLP",
+  "transfer_models": [
+    "Random Forest",
+    "XGBoost"
+  ],
+  "summary_table": [
+    {
+      "model": "Random Forest",
+      "clean_accuracy": 97.5,
+      "clean_precision": 96.8,
+      "clean_recall": 97.9,
+      "clean_f1": 97.4,
+      "clean_roc_auc": 99.7,
+      "fgsm_detection_rate": 0.0,
+      "pgd_detection_rate": 0.0,
+      "after_defense_pgd_rate": null
+    },
+    {
+      "model": "XGBoost",
+      "clean_accuracy": 97.8,
+      "clean_precision": 97.5,
+      "clean_recall": 97.7,
+      "clean_f1": 97.6,
+      "clean_roc_auc": 99.8,
+      "fgsm_detection_rate": 0.0,
+      "pgd_detection_rate": 0.0,
+      "after_defense_pgd_rate": null
+    },
+    {
+      "model": "MLP",
+      "clean_accuracy": 94.6,
+      "clean_precision": 97.1,
+      "clean_recall": 91.1,
+      "clean_f1": 94.0,
+      "clean_roc_auc": 97.8,
+      "fgsm_detection_rate": 92.5,
+      "pgd_detection_rate": 92.5,
+      "after_defense_pgd_rate": 97.0
+    }
+  ],
+  "defense_table": [
+    {
+      "defense": "Baseline MLP",
+      "clean_accuracy": 94.6,
+      "pgd_detection_rate": 92.5,
+      "compute_cost": "Low"
+    },
+    {
+      "defense": "Adversarial Training (MLP)",
+      "clean_accuracy": 94.4,
+      "pgd_detection_rate": 97.0,
+      "compute_cost": "High (retraining)"
+    },
+    {
+      "defense": "Feature Squeezing (MLP)",
+      "clean_accuracy": 94.6,
+      "pgd_detection_rate": 92.5,
+      "compute_cost": "Low"
+    },
+    {
+      "defense": "Ensemble (RF + Robust MLP)",
+      "clean_accuracy": 95.9,
+      "pgd_detection_rate": 97.0,
+      "compute_cost": "Medium"
+    }
+  ],
+  "epsilon_curve": [
+    {
+      "model": "Random Forest",
+      "epsilon": 0.01,
+      "attack_detection_rate": 2.0
+    },
+    {
+      "model": "Random Forest",
+      "epsilon": 0.05,
+      "attack_detection_rate": 0.0
+    },
+    {
+      "model": "Random Forest",
+      "epsilon": 0.1,
+      "attack_detection_rate": 0.0
+    },
+    {
+      "model": "XGBoost",
+      "epsilon": 0.01,
+      "attack_detection_rate": 0.0
+    },
+    {
+      "model": "XGBoost",
+      "epsilon": 0.05,
+      "attack_detection_rate": 0.0
+    },
+    {
+      "model": "XGBoost",
+      "epsilon": 0.1,
+      "attack_detection_rate": 0.0
+    },
+    {
+      "model": "MLP",
+      "epsilon": 0.01,
+      "attack_detection_rate": 92.5
+    },
+    {
+      "model": "MLP",
+      "epsilon": 0.05,
+      "attack_detection_rate": 92.5
+    },
+    {
+      "model": "MLP",
+      "epsilon": 0.1,
+      "attack_detection_rate": 88.0
+    }
+  ],
+  "baseline_detail": [
+    {
+      "model": "Random Forest",
+      "clean": {
+        "accuracy": 0.9754273504273504,
+        "precision": 0.9682539682539683,
+        "recall": 0.9793577981651376,
+        "f1": 0.9737742303306728,
+        "confusion_matrix": [
+          [
+            486,
+            14
+          ],
+          [
+            9,
+            427
+          ]
+        ],
+        "roc_auc": 0.9970458715596331
+      },
+      "pgd_on_attacks": {
+        "accuracy": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            0,
+            0
+          ],
+          [
+            200,
+            0
+          ]
+        ],
+        "roc_auc": null
+      }
+    },
+    {
+      "model": "XGBoost",
+      "clean": {
+        "accuracy": 0.9775641025641025,
+        "precision": 0.9748283752860412,
+        "recall": 0.9770642201834863,
+        "f1": 0.9759450171821306,
+        "confusion_matrix": [
+          [
+            489,
+            11
+          ],
+          [
+            10,
+            426
+          ]
+        ],
+        "roc_auc": 0.9978073394495413
+      },
+      "pgd_on_attacks": {
+        "accuracy": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            0,
+            0
+          ],
+          [
+            200,
+            0
+          ]
+        ],
+        "roc_auc": null
+      }
+    },
+    {
+      "model": "MLP",
+      "clean": {
+        "accuracy": 0.9455128205128205,
+        "precision": 0.9706601466992665,
+        "recall": 0.9105504587155964,
+        "f1": 0.9396449704142011,
+        "confusion_matrix": [
+          [
+            488,
+            12
+          ],
+          [
+            39,
+            397
+          ]
+        ],
+        "roc_auc": 0.978256880733945
+      },
+      "pgd_on_attacks": {
+        "accuracy": 0.925,
+        "precision": 1.0,
+        "recall": 0.925,
+        "f1": 0.961038961038961,
+        "confusion_matrix": [
+          [
+            0,
+            0
+          ],
+          [
+            15,
+            185
+          ]
+        ],
+        "roc_auc": null
+      }
+    }
+  ]
+}

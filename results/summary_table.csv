@@ -1,0 +1,4 @@
+model,clean_accuracy,clean_precision,clean_recall,clean_f1,clean_roc_auc,fgsm_detection_rate,pgd_detection_rate,after_defense_pgd_rate
+Random Forest,97.5,96.8,97.9,97.4,99.7,0.0,0.0,
+XGBoost,97.8,97.5,97.7,97.6,99.8,0.0,0.0,
+MLP,94.6,97.1,91.1,94.0,97.8,92.5,92.5,97.0

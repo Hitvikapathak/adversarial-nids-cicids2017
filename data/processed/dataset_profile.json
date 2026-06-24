@@ -1,0 +1,19 @@
+{
+  "rows": 170366,
+  "columns": 79,
+  "feature_count": 78,
+  "missing_values": 20,
+  "duplicate_rows": 6066,
+  "label_distribution": {
+    "BENIGN": 168186,
+    "Web Attack \ufffd Brute Force": 1507,
+    "Web Attack \ufffd XSS": 652,
+    "Web Attack \ufffd Sql Injection": 21
+  },
+  "attack_types": [
+    "Web Attack \ufffd Brute Force",
+    "Web Attack \ufffd XSS",
+    "Web Attack \ufffd Sql Injection"
+  ],
+  "classification_task": "binary (Benign vs Attack)"
+}

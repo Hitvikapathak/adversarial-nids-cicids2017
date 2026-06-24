@@ -1,0 +1,5 @@
+# Personal Reflection — Hitvika Pathak
+
+I chose adversarial robustness in network intrusion detection because clean accuracy alone can create a false sense of security. During this project, I saw Random Forest reach 97.5% clean accuracy on CIC-IDS2017, then fall to 0.0% attack-detection rate under transferred PGD examples. That gap changed how I think about ML in cybersecurity: model training is only one step, and attacker-aware evaluation must be part of deployment.
+
+At IIT Kanpur B.Cyber, I want to build operational security systems, not only offline models. My next steps are a FastAPI inference dashboard, API abuse detection around model endpoints, and a CTF-style challenge where participants craft traffic features to test detector robustness. I am especially interested in combining threat modeling (STRIDE), red-team style testing, and practical defenses for national digital infrastructure.

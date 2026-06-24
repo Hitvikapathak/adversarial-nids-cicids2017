@@ -1,0 +1,5 @@
+defense,clean_accuracy,pgd_detection_rate,compute_cost
+Baseline MLP,94.6,92.5,Low
+Adversarial Training (MLP),94.4,97.0,High (retraining)
+Feature Squeezing (MLP),94.6,92.5,Low
+Ensemble (RF + Robust MLP),95.9,97.0,Medium
