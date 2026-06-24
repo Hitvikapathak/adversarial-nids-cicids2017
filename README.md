@@ -67,6 +67,19 @@ See `results/metrics.json` and `results/summary_table.csv`.
 5. Personal reflection: `docs/personal_reflection.md`
 6. Demo script: `docs/demo_video_script.md`
 
+## Project Status
+
+| Component | Status |
+|-----------|--------|
+| Code + pipeline | Done |
+| Experiments + metrics | Done |
+| Report (17 sections) | Done |
+| One-page summary | Done |
+| Screenshots + graphs | Done |
+| Git commit (local) | Done |
+| GitHub push | **You** — see `GITHUB_POSTING_GUIDE.md` |
+| Demo video | **You** — see `docs/DEMO_RECORDING_GUIDE.md` |
+
 ## License
 
 Academic portfolio project for IIT Kanpur B.Cyber application.
