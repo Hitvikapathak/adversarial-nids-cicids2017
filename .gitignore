@@ -11,4 +11,6 @@ models/*.joblib
 *.log
 .DS_Store
 Thumbs.db
+~$*
+*.tmp
 src/__pycache__/

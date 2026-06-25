@@ -4,7 +4,7 @@ $env:Path = "C:\Program Files\Git\cmd;C:\Program Files\GitHub CLI;" + $env:Path
 
 $RepoRoot = Split-Path $PSScriptRoot -Parent
 $RepoName = "adversarial-nids-cicids2017"
-$Owner = "hitvika"
+$Owner = "Hitvikapathak"
 
 Set-Location $RepoRoot
 

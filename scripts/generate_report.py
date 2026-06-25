@@ -10,10 +10,11 @@ from docx.shared import Inches, Pt
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
-OUT_DOCX = Path(r"C:\Users\HP\Downloads\Adversarial_Robustness_CIC_IDS2017_Project_Report_FINAL.docx")
-OUT_PDF = Path(r"C:\Users\HP\Downloads\Adversarial_Robustness_CIC_IDS2017_Project_Report_FINAL.pdf")
+DELIVERABLES = ROOT / "deliverables"
+OUT_DOCX = DELIVERABLES / "Adversarial_Robustness_CIC_IDS2017_Project_Report_FINAL.docx"
+OUT_PDF = DELIVERABLES / "Adversarial_Robustness_CIC_IDS2017_Project_Report_FINAL.pdf"
 REFLECTION = ROOT / "docs" / "personal_reflection.md"
-GITHUB_REPO = "https://github.com/hitvika/adversarial-nids-cicids2017"
+GITHUB_REPO = "https://github.com/Hitvikapathak/adversarial-nids-cicids2017"
 
 
 def heading(doc, text, level=1):
@@ -266,21 +267,15 @@ def main():
         heading(doc, "Personal Reflection", 2)
         doc.add_paragraph(reflection.replace("# Personal Reflection — Hitvika Pathak\n\n", ""))
 
+    DELIVERABLES.mkdir(parents=True, exist_ok=True)
     doc.save(OUT_DOCX)
     print(f"Saved: {OUT_DOCX}")
 
-    # Best-effort PDF export
     try:
-        import subprocess
+        from docx2pdf import convert
 
-        soffice = Path(r"C:\Users\HP\.grok\skills\docx\scripts\office\soffice.py")
-        if soffice.exists():
-            subprocess.run(
-                ["python", str(soffice), "--headless", "--convert-to", "pdf", str(OUT_DOCX)],
-                check=True,
-                cwd=str(OUT_DOCX.parent),
-            )
-            print(f"Saved: {OUT_PDF}")
+        convert(str(OUT_DOCX), str(OUT_PDF))
+        print(f"Saved: {OUT_PDF}")
     except Exception as exc:
         print(f"PDF export skipped: {exc}")
 

@@ -1,23 +1,23 @@
 # Final Submission Package — Hitvika Pathak
 
-## Project complete locally
+## Status: Ready to submit
 
-All code, experiments, reports, and screenshots are finished.
+All code, experiments, reports, and screenshots are complete. The repository is live on GitHub.
 
-## GitHub link to post
+## GitHub repository
 
 ```
-https://github.com/hitvika/adversarial-nids-cicids2017
+https://github.com/Hitvikapathak/adversarial-nids-cicids2017
 ```
-
-Follow `GITHUB_POSTING_GUIDE.md` in the project root to push.
 
 ## Files to attach in IITK application
 
-1. `Adversarial_Robustness_CIC_IDS2017_Project_Report_FINAL.pdf`
-2. `Adversarial_NIDS_One_Page_Summary_IITK_BCyber.docx`
-3. GitHub URL (above)
-4. Optional: 2-min demo video link
+| # | Item | File |
+|---|------|------|
+| 1 | Main report (PDF) | `deliverables/Adversarial_Robustness_CIC_IDS2017_Project_Report_FINAL.pdf` |
+| 2 | One-page summary (DOCX) | `deliverables/Adversarial_NIDS_One_Page_Summary_IITK_BCyber.docx` |
+| 3 | GitHub URL | `https://github.com/Hitvikapathak/adversarial-nids-cicids2017` |
+| 4 | Demo video (optional) | Record using `docs/DEMO_RECORDING_GUIDE.md`, upload unlisted to YouTube |
 
 ## Key result (for quick reference)
 
@@ -28,5 +28,6 @@ MLP after adversarial training: **97.0%** PGD detection rate.
 ## Reproduce in one command
 
 ```bash
+pip install -r requirements.txt
 python run.py
 ```

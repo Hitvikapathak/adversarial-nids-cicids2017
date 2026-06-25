@@ -6,7 +6,7 @@ from docx.shared import Pt
 
 ROOT = Path(__file__).resolve().parents[1]
 metrics = json.loads((ROOT / "results" / "metrics.json").read_text(encoding="utf-8"))
-out = Path(r"C:\Users\HP\Downloads\Adversarial_NIDS_One_Page_Summary_IITK_BCyber.docx")
+out = ROOT / "deliverables" / "Adversarial_NIDS_One_Page_Summary_IITK_BCyber.docx"
 
 doc = Document()
 t = doc.add_paragraph("Adversarial Robustness in ML-based NIDS — One-Page Summary")
@@ -25,8 +25,8 @@ rows = [
         "Key result",
         f"RF clean {metrics['summary_table'][0]['clean_accuracy']}% → PGD transfer detection {metrics['summary_table'][0]['pgd_detection_rate']}%",
     ),
-    ("Reproduce", "python scripts/run_experiments.py"),
-    ("GitHub", "https://github.com/hitvika/adversarial-nids-cicids2017"),
+    ("Reproduce", "python run.py"),
+    ("GitHub", "https://github.com/Hitvikapathak/adversarial-nids-cicids2017"),
     ("Local path", str(ROOT)),
 ]
 for k, v in rows:

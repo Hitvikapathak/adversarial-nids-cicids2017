@@ -2,7 +2,7 @@
 
 **Applicant:** Hitvika Pathak  
 **Programme:** IIT Kanpur B.Cyber  
-**Repository:** https://github.com/hitvika/adversarial-nids-cicids2017
+**Repository:** https://github.com/Hitvikapathak/adversarial-nids-cicids2017
 
 ## Project Goal
 
@@ -77,8 +77,8 @@ See `results/metrics.json` and `results/summary_table.csv`.
 | One-page summary | Done |
 | Screenshots + graphs | Done |
 | Git commit (local) | Done |
-| GitHub push | **You** — see `GITHUB_POSTING_GUIDE.md` |
-| Demo video | **You** — see `docs/DEMO_RECORDING_GUIDE.md` |
+| GitHub push | Done — https://github.com/Hitvikapathak/adversarial-nids-cicids2017 |
+| Demo video | Optional — see `docs/DEMO_RECORDING_GUIDE.md` |
 
 ## License
 
